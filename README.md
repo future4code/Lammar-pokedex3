@@ -1,9 +1,9 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Bruna de Carvalho dos Santos
+- Mauricio da Rosa Guimarães
+- Rafael Castilho de Castro
 
 Link do Surge: www.link.com.br
 
