@@ -2,7 +2,7 @@
 
 Nome dos integrantes: 
 - Bruna de Carvalho dos Santos
-- Mauricio da Rosa Guimarães
+- Mauricio da Rosa Gonçalves
 - Rafael Castilho de Castro
 
 Link do Surge: www.link.com.br
