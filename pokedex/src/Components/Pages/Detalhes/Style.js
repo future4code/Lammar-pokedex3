@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import backgroundHeaderDetalhes from '../../../img/headerdetalhes.png'
 
 export const Header=styled.header`
     display: flex;
@@ -6,9 +7,10 @@ export const Header=styled.header`
     align-items: center;
     width: 100vw;
     height: 10vh;
+    background-image: url(${backgroundHeaderDetalhes});
     background-color: #f6bd20;
     background-size: contain;
-    background-position-x: right;
+    background-position-x: center;
     background-repeat: no-repeat;
     opacity: 0.7;
     :hover{
@@ -25,6 +27,7 @@ export const ButtonIcones=styled.button`
     size: 40px;
     :hover{
         color: #ed6005;
+        transition: .5s ease-in-out;
     }
 `
 
@@ -42,6 +45,6 @@ export const Button=styled.button`
     :hover{
         color: white;
         background-color: #f77a0f;
-        border: 2px solid whit;
+        transition: .5s ease-in-out;
     }
 `
