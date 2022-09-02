@@ -11,11 +11,9 @@ export const useRequestData = (url) => {
         axios.get(url).then(response => {
             setIsLoading(false)
             setData(response)
-            // console.log(response)
         }).catch(error => {
             setIsLoading(false)
             setErrorMsg(error.message)
-            // console.log(error.message)
         })
     }, [url])
 
