@@ -11,7 +11,7 @@ export function RoutesComponent() {
             <Routes>
                 <Route index element={<HomePage/>}/>
                 <Route path="/pokedex" element={<Pokedex/>}/>
-                <Route path="/pokemon_details" element={<PokemonDetails/>}/>
+                <Route path="/pokemon_details/:name" element={<PokemonDetails/>} />
             </Routes>
         </BrowserRouter>
     )
