@@ -70,8 +70,8 @@ export const DivImagens=styled.div`
         width: 25vh;
         :hover{
             color: black;
-            -webkit-transform: scale(1.5);
-             transform: scale(1.5);
+            -webkit-transform: scale(1.3);
+             transform: scale(1.3);
              transition: .6s ease;
         }
     }
@@ -116,6 +116,7 @@ export const DivDados=styled.div`
     border: 2px solid white;
     border-radius: 15px;
     background-color: #f6bd20;
+    
 
     h1{
         font-family: 'Rajdhani', sans-serif;
@@ -126,7 +127,6 @@ export const DivDados=styled.div`
     p{
         font-family: 'Rajdhani', sans-serif;
         margin-left: 20px;
-
         font-size: 25px;
         color: #395A9F;
     }
