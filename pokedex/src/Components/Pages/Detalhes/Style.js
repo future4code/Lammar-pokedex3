@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import backgroundHeaderDetalhes from "../../../img/headerdetalhes.png"
 
 export const Header=styled.header`
     display: flex;
@@ -7,13 +6,131 @@ export const Header=styled.header`
     align-items: center;
     width: 99vw;
     height: 10vh;
-    background-color: #f6bd20;
     h1 {
         font-family: 'Pokemon Solid', sans-serif;
-        color: #395A9F;
         font-size: 40px;
         font-weight: 100;
+        color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#FFF700"
+        }
+        else if (props.type === "water"){
+            return "#005570"
+        }
+        else if (props.type === "fire"){
+            return "#ff5e20"
+        }
+        else if (props.type === "grass"){
+            return "#104810"
+        }
+        else if (props.type === "fairy"){
+            return "#e75e7c"
+        }
+        else if (props.type === "flying"){
+            return "#7758d5"
+        }
+        else if (props.type === "fighting"){
+            return "#600904"
+        }
+        else if (props.type === "poison"){
+            return "#620562"
+        }
+        else if (props.type === "psychic"){
+            return "#c1265f"
+        }
+        else if (props.type === "ice"){
+            return "#0aa1a1"
+        }
+        else if (props.type === "dark"){
+            return "#48250d"
+        }
+        else if (props.type === "dragon"){
+            return "#3e1f89"
+        }
+        else if (props.type === "steel"){
+            return "#7d7d93"
+        }
+        else if (props.type === "ghost"){
+            return "#462d70"
+        }
+        else if (props.type === "ground"){
+            return "#b59335"
+        }
+        else if (props.type === "bug"){
+            return "#958d00"
+        }
+        else if (props.type === "rock"){
+            return "#816902"
+        }
+        else if  (props.type === "normal") {
+            return "#6456278a" 
+        }
+        else{
+            return "white"
+        }
+    }}
+
     }
+
+    background-color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#F5CA00"
+        }
+        else if (props.type === "water"){
+            return "#3aa4c7"
+        }
+        else if (props.type === "fire"){
+            return "orange"
+        }
+        else if (props.type === "grass"){
+            return "green"
+        }
+        else if (props.type === "fairy"){
+            return "#EE99AC"
+        }
+        else if (props.type === "flying"){
+            return "#A890F0"
+        }
+        else if (props.type === "fighting"){
+            return "#b31d15"
+        }
+        else if (props.type === "poison"){
+            return "#A040A0"
+        }
+        else if (props.type === "psychic"){
+            return "#F85888"
+        }
+        else if (props.type === "ice"){
+            return "#7ED9D9"
+        }
+        else if (props.type === "dark"){
+            return "#62412a"
+        }
+        else if (props.type === "dragon"){
+            return "#7445e5"
+        }
+        else if (props.type === "steel"){
+            return "#B8B8D0"
+        }
+        else if (props.type === "ghost"){
+            return "#705898"
+        }
+        else if (props.type === "ground"){
+            return "#E0C068"
+        }
+        else if (props.type === "bug"){
+            return "#c7c154"
+        }
+        else if (props.type === "rock"){
+            return "#B8A038"
+        }
+        else if  (props.type === "normal") {
+            return "#9f8f5bd1" 
+        }
+        else{
+            return "#68A090"
+        }
+    }}
 
 `
 export const ButtonIcones=styled.button`
@@ -23,9 +140,68 @@ export const ButtonIcones=styled.button`
     cursor: pointer;
     color: white;
     size: 40px;
-    :hover{
-        color: #ed6005;
+    :hover {
         transition: .5s ease-in-out;
+        color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#FFF700"
+        }
+        else if (props.type === "water"){
+            return "#005570"
+        }
+        else if (props.type === "fire"){
+            return "#ff5e20"
+        }
+        else if (props.type === "grass"){
+            return "#104810"
+        }
+        else if (props.type === "fairy"){
+            return "#e75e7c"
+        }
+        else if (props.type === "flying"){
+            return "#7758d5"
+        }
+        else if (props.type === "fighting"){
+            return "#600904"
+        }
+        else if (props.type === "poison"){
+            return "#620562"
+        }
+        else if (props.type === "psychic"){
+            return "#c1265f"
+        }
+        else if (props.type === "ice"){
+            return "#0aa1a1"
+        }
+        else if (props.type === "dark"){
+            return "#48250d"
+        }
+        else if (props.type === "dragon"){
+            return "#3e1f89"
+        }
+        else if (props.type === "steel"){
+            return "#7d7d93"
+        }
+        else if (props.type === "ghost"){
+            return "#462d70"
+        }
+        else if (props.type === "ground"){
+            return "#b59335"
+        }
+        else if (props.type === "bug"){
+            return "#958d00"
+        }
+        else if (props.type === "rock"){
+            return "#816902"
+        }
+        else if  (props.type === "normal") {
+            return "#6456278a" 
+        }
+        else{
+            return "#white"
+        }
+    }};
+
     }
 `
 export const Button=styled.button`
@@ -36,13 +212,130 @@ export const Button=styled.button`
     cursor: pointer;
     border: none;
     background-color: white;
-    color: #db6805;
     font-size: 16px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#F5CA00"
+        }
+        else if (props.type === "water"){
+            return "#3aa4c7"
+        }
+        else if (props.type === "fire"){
+            return "orange"
+        }
+        else if (props.type === "grass"){
+            return "green"
+        }
+        else if (props.type === "fairy"){
+            return "#e75e7c"
+        }
+        else if (props.type === "flying"){
+            return "#7758d5"
+        }
+        else if (props.type === "fighting"){
+            return "red"
+        }
+        else if (props.type === "poison"){
+            return "#620562"
+        }
+        else if (props.type === "psychic"){
+            return "#c1265f"
+        }
+        else if (props.type === "ice"){
+            return "#0aa1a1"
+        }
+        else if (props.type === "dark"){
+            return "#48250d"
+        }
+        else if (props.type === "dragon"){
+            return "#3e1f89"
+        }
+        else if (props.type === "steel"){
+            return "#7d7d93"
+        }
+        else if (props.type === "ghost"){
+            return "#462d70"
+        }
+        else if (props.type === "ground"){
+            return "#b59335"
+        }
+        else if (props.type === "bug"){
+            return "#958d00"
+        }
+        else if (props.type === "rock"){
+            return "#816902"
+        }
+        else if  (props.type === "normal") {
+            return "#6456278a" 
+        }
+        else{
+            return "#white"
+        }
+    }};
+
     :hover{
         color: white;
-        background-color: #f77a0f;
         transition: .5s ease-in-out;
+        background-color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#e1702e"
+        }
+        else if (props.type === "water"){
+            return "#005570"
+        }
+        else if (props.type === "fire"){
+            return "#ff5e20"
+        }
+        else if (props.type === "grass"){
+            return "#104810"
+        }
+        else if (props.type === "fairy"){
+            return "#e75e7c"
+        }
+        else if (props.type === "flying"){
+            return "#7758d5"
+        }
+        else if (props.type === "fighting"){
+            return "#600904"
+        }
+        else if (props.type === "poison"){
+            return "#620562"
+        }
+        else if (props.type === "psychic"){
+            return "#c1265f"
+        }
+        else if (props.type === "ice"){
+            return "#0aa1a1"
+        }
+        else if (props.type === "dark"){
+            return "#48250d"
+        }
+        else if (props.type === "dragon"){
+            return "#3e1f89"
+        }
+        else if (props.type === "steel"){
+            return "#7d7d93"
+        }
+        else if (props.type === "ghost"){
+            return "#462d70"
+        }
+        else if (props.type === "ground"){
+            return "#b59335"
+        }
+        else if (props.type === "bug"){
+            return "#958d00"
+        }
+        else if (props.type === "rock"){
+            return "#816902"
+        }
+        else if  (props.type === "normal") {
+            return "#6456278a" 
+        }
+        else{
+            return "#white"
+        }
+    }};
     }
 `
 
@@ -52,11 +345,67 @@ export const DivDetalhes=styled.div`
     width: 99vw;
     flex-direction: column;
     flex-wrap: wrap;
-    background-image: url(${backgroundHeaderDetalhes});
-    background-size: contain;
-    background-position-x: 99%;
-    background-repeat: no-repeat;
-    background-color: #f6bd208f;
+    justify-content: center;
+
+    background: ${(props)=>{
+        if(props.type === "electric"){
+            return "#fff20369"
+        }
+        else if (props.type === "water"){
+            return "lightblue"
+        }
+        else if (props.type === "fire"){
+            return "#ffc966"
+        }
+        else if (props.type === "grass"){
+            return "#7ebf7e"
+        }
+        else if (props.type === "fairy"){
+            return "pink"
+        }
+        else if (props.type === "flying"){
+            return "#c9baf5"
+        }
+        else if (props.type === "fighting"){
+            return "#e53a3a"
+        }
+        else if (props.type === "poison"){
+            return "#C183C1"
+        }
+        else if (props.type === "psychic"){
+            return "#FA92B2"
+        }
+        else if (props.type === "ice"){
+            return "#BCE6E6"
+        }
+        else if (props.type === "dark"){
+            return "#705848"
+        }
+        else if (props.type === "dragon"){
+            return "#A27DFA"
+        }
+        else if (props.type === "steel"){
+            return "#dddded"
+        }
+        else if (props.type === "ghost"){
+            return "#8d74a1"
+        }
+        else if (props.type === "ground"){
+            return "#EBD69D"
+        }
+        else if (props.type === "bug"){
+            return "#c7c154c4"
+        }
+        else if (props.type === "rock"){
+            return "#D1C17D"
+        }
+        else if  (props.type === "normal") {
+            return "#9f8f5b8a" 
+        }
+        else{
+            return "#white"
+        }
+    }}
 
 `
 export const DivImagens=styled.div`
@@ -66,6 +415,8 @@ export const DivImagens=styled.div`
     justify-content: center;
     height: 85vh;
     width: 20%;
+    margin: 2vw 0 0 6vw;
+
     img{
         width: 25vh;
         :hover{
@@ -92,7 +443,66 @@ export const DivImagemFrontal=styled.div`
     border: 2px solid white;
     margin-bottom: 5vh;
     border-radius: 15px;
-    background-color: #f6bd20;
+
+    background-color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#F5CA00"
+        }
+        else if (props.type === "water"){
+            return "#3aa4c7"
+        }
+        else if (props.type === "fire"){
+            return "orange"
+        }
+        else if (props.type === "grass"){
+            return "green"
+        }
+        else if (props.type === "fairy"){
+            return "#EE99AC"
+        }
+        else if (props.type === "flying"){
+            return "#A890F0"
+        }
+        else if (props.type === "fighting"){
+            return "#b31d15"
+        }
+        else if (props.type === "poison"){
+            return "#A040A0"
+        }
+        else if (props.type === "psychic"){
+            return "#F85888"
+        }
+        else if (props.type === "ice"){
+            return "#7ED9D9"
+        }
+        else if (props.type === "dark"){
+            return "#62412a"
+        }
+        else if (props.type === "dragon"){
+            return "#7445e5"
+        }
+        else if (props.type === "steel"){
+            return "#B8B8D0"
+        }
+        else if (props.type === "ghost"){
+            return "#705898"
+        }
+        else if (props.type === "ground"){
+            return "#E0C068"
+        }
+        else if (props.type === "bug"){
+            return "#c7c154c4"
+        }
+        else if (props.type === "rock"){
+            return "#B8A038"
+        }
+        else if  (props.type === "normal") {
+            return "#9f8f5b8a" 
+        }
+        else{
+            return "#white"
+        }
+    }}
 `
 
 export const DivImagemCostas=styled.div`
@@ -103,8 +513,70 @@ export const DivImagemCostas=styled.div`
     min-height: 30vh;
     width: 80%;
     border: 2px solid white;
+    margin-bottom: 5vh;
     border-radius: 15px;
-    background-color: #f6bd20;
+    
+    background-color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#F5CA00"
+        }
+        else if (props.type === "water"){
+            return "#3aa4c7"
+        }
+        else if (props.type === "fire"){
+            return "orange"
+        }
+        else if (props.type === "grass"){
+            return "green"
+        }
+        else if (props.type === "fairy"){
+            return "#EE99AC"
+        }
+        else if (props.type === "flying"){
+            return "#A890F0"
+        }
+        else if (props.type === "fighting"){
+            return "#b31d15"
+        }
+        else if (props.type === "poison"){
+            return "#A040A0"
+        }
+        else if (props.type === "psychic"){
+            return "#F85888"
+        }
+        else if (props.type === "ice"){
+            return "#7ED9D9"
+        }
+        else if (props.type === "dark"){
+            return "#62412a"
+        }
+        else if (props.type === "dragon"){
+            return "#7445e5"
+        }
+        else if (props.type === "steel"){
+            return "#B8B8D0"
+        }
+        else if (props.type === "ghost"){
+            return "#705898"
+        }
+        else if (props.type === "ground"){
+            return "#E0C068"
+        }
+        else if (props.type === "bug"){
+            return "#c7c154c4"
+        }
+        else if (props.type === "rock"){
+            return "#B8A038"
+        }
+        else if  (props.type === "normal") {
+            return "#9f8f5b8a" 
+        }
+        else{
+            return "#68A090"
+        }
+    }}
+
+    
 `
 
 export const DivDados=styled.div`
@@ -115,7 +587,6 @@ export const DivDados=styled.div`
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
-    background-color: #f6bd20;
     
 
     h1{
@@ -128,8 +599,68 @@ export const DivDados=styled.div`
         font-family: 'Rajdhani', sans-serif;
         margin-left: 20px;
         font-size: 25px;
-        color: #395A9F;
+        color: white;
     }
+
+    background-color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#F5CA00"
+        }
+        else if (props.type === "water"){
+            return "#3aa4c7"
+        }
+        else if (props.type === "fire"){
+            return "orange"
+        }
+        else if (props.type === "grass"){
+            return "green"
+        }
+        else if (props.type === "fairy"){
+            return "#EE99AC"
+        }
+        else if (props.type === "flying"){
+            return "#A890F0"
+        }
+        else if (props.type === "fighting"){
+            return "#b31d15"
+        }
+        else if (props.type === "poison"){
+            return "#A040A0"
+        }
+        else if (props.type === "psychic"){
+            return "#F85888"
+        }
+        else if (props.type === "ice"){
+            return "#7ED9D9"
+        }
+        else if (props.type === "dark"){
+            return "#62412a"
+        }
+        else if (props.type === "dragon"){
+            return "#7445e5"
+        }
+        else if (props.type === "steel"){
+            return "#B8B8D0"
+        }
+        else if (props.type === "ghost"){
+            return "#705898"
+        }
+        else if (props.type === "ground"){
+            return "#E0C068"
+        }
+        else if (props.type === "bug"){
+            return "#c7c154c4"
+        }
+        else if (props.type === "rock"){
+            return "#B8A038"
+        }
+        else if  (props.type === "normal") {
+            return "#9f8f5b8a" 
+        }
+        else{
+            return "#68A090"
+        }
+    }}
     
 `
 
@@ -141,26 +672,85 @@ export const DivTipos=styled.div`
     width: 20%;
     border: 2px solid white;
     border-radius: 10px;
-    background-color: #f6bd20;
 
     p{
         margin-left: 10px;
         font-family: 'Rajdhani', sans-serif;
         font-size: 25px;
-        color: #395A9F;
+        color: white;
         text-align: center;
     }
+
+    background-color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#F5CA00"
+        }
+        else if (props.type === "water"){
+            return "#3aa4c7"
+        }
+        else if (props.type === "fire"){
+            return "orange"
+        }
+        else if (props.type === "grass"){
+            return "green"
+        }
+        else if (props.type === "fairy"){
+            return "#EE99AC"
+        }
+        else if (props.type === "flying"){
+            return "#A890F0"
+        }
+        else if (props.type === "fighting"){
+            return "#b31d15"
+        }
+        else if (props.type === "poison"){
+            return "#A040A0"
+        }
+        else if (props.type === "psychic"){
+            return "#F85888"
+        }
+        else if (props.type === "ice"){
+            return "#7ED9D9"
+        }
+        else if (props.type === "dark"){
+            return "#62412a"
+        }
+        else if (props.type === "dragon"){
+            return "#7445e5"
+        }
+        else if (props.type === "steel"){
+            return "#B8B8D0"
+        }
+        else if (props.type === "ghost"){
+            return "#705898"
+        }
+        else if (props.type === "ground"){
+            return "#E0C068"
+        }
+        else if (props.type === "bug"){
+            return "#c7c154c4"
+        }
+        else if (props.type === "rock"){
+            return "#B8A038"
+        }
+        else if  (props.type === "normal") {
+            return "#9f8f5b8a" 
+        }
+        else{
+            return "#68A090"
+        }
+    }}
 `
 
 export const DivMovimentos=styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 5vh;
-    height: 55vh;
+    height: 61vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
-    background-color: #f6bd20;
+    overflow-y: scroll;
 
     h1{
         font-family: 'Rajdhani', sans-serif;
@@ -170,8 +760,68 @@ export const DivMovimentos=styled.div`
     p{
         font-family: 'Rajdhani', sans-serif;
         font-size: 25px;
-        color: #395A9F;
+        color: white;
         text-align: start;
         margin: 2px 30%;
     }
+
+    background-color: ${(props)=>{
+        if(props.type === "electric"){
+            return "#F5CA00"
+        }
+        else if (props.type === "water"){
+            return "#3aa4c7"
+        }
+        else if (props.type === "fire"){
+            return "orange"
+        }
+        else if (props.type === "grass"){
+            return "green"
+        }
+        else if (props.type === "fairy"){
+            return "#EE99AC"
+        }
+        else if (props.type === "flying"){
+            return "#A890F0"
+        }
+        else if (props.type === "fighting"){
+            return "#b31d15"
+        }
+        else if (props.type === "poison"){
+            return "#A040A0"
+        }
+        else if (props.type === "psychic"){
+            return "#F85888"
+        }
+        else if (props.type === "ice"){
+            return "#7ED9D9"
+        }
+        else if (props.type === "dark"){
+            return "#62412a"
+        }
+        else if (props.type === "dragon"){
+            return "#7445e5"
+        }
+        else if (props.type === "steel"){
+            return "#B8B8D0"
+        }
+        else if (props.type === "ghost"){
+            return "#705898"
+        }
+        else if (props.type === "ground"){
+            return "#E0C068"
+        }
+        else if (props.type === "bug"){
+            return "#c7c154c4"
+        }
+        else if (props.type === "rock"){
+            return "#B8A038"
+        }
+        else if  (props.type === "normal") {
+            return "#9f8f5b8a" 
+        }
+        else{
+            return "#68A090"
+        }
+    }}
 `
