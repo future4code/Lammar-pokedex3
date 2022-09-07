@@ -29,26 +29,23 @@ export const PokemonDetails=()=>{
 
     return(
         <>
-            <Header>
-                <ButtonIcones onClick={voltar}><BiArrowBack size="40px" /></ButtonIcones>
-                <h1>{detalhes?.name[0].toUpperCase(0) + detalhes?.name.substr(1)}</h1>
-                <Button>Adicionar/Remover da pokedex</Button>
+            <Header type={detalhes?.types[0].type.name}>
+                <ButtonIcones type={detalhes?.types[0].type.name} onClick={voltar} ><BiArrowBack size="40px" /></ButtonIcones>
+                <h1 >{detalhes?.name[0].toUpperCase(0) + detalhes?.name.substr(1)}</h1>
+                <Button type={detalhes?.types[0].type.name}>Adicionar/Remover da pokedex</Button>
             </Header>
-            <DivDetalhes>
+            <DivDetalhes type={detalhes?.types[0].type.name}>
                 <DivImagens>
-                    <DivImagemFrontal
-/*                     style={detalhes?.types[0].type.name === "fire" ? {backgroundImage: r}:{}}
- */
-                    >
+                    <DivImagemFrontal type={detalhes?.types[0].type.name}>
                         <h1>Imagem frontal:</h1>
-                        <img src={detalhes?.sprites.other.home.front_default} alt={detalhes?.name}/>
+                        <img src={detalhes?.sprites.other.home.front_default} alt={detalhes?.name} />
                     </DivImagemFrontal>
-                    <DivImagemCostas>
+                    <DivImagemCostas type={detalhes?.types[0].type.name}>
                         <h1>  Imagem de costas: </h1>
                         <img src={detalhes?.sprites.back_default} alt={detalhes?.name}/>
                     </DivImagemCostas>
                 </DivImagens>
-                <DivDados>
+                <DivDados type={detalhes?.types[0].type.name}>
                     <h1>Dados:</h1>
                     <p>Experience: {detalhes?.base_experience}</p>   
                     <p>XP: {detalhes?.stats[0].base_stat}</p>
@@ -58,28 +55,23 @@ export const PokemonDetails=()=>{
                     <p>Special Defense: {detalhes?.stats[4].base_stat}</p>
                     <p>Speed: {detalhes?.stats[5].base_stat}</p>
                 </DivDados>
-                <DivTipos>
+                <DivTipos type={detalhes?.types[0].type.name}>
                     <p>Tipo: {detalhes?.types[0].type.name[0].toUpperCase(0) + detalhes?.types[0].type.name.substr(1)}</p>
-{/*                     <p>Tipo: {detalhes?.types[1].type.name[0].toUpperCase(0) + detalhes?.types[1].type.name.substr(1)}</p>
- */}                </DivTipos>
-                <DivMovimentos>
+                </DivTipos>
+                <DivMovimentos type={detalhes?.types[0].type.name}>
                     <h1>Movimentos</h1>
-                    <p>{detalhes?.moves[0].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[1].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[2].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[3].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[4].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[5].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[6].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[7].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[8].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
-                    <p>{detalhes?.moves[9].move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
+                    {detalhes?.moves.length > 0 ?
+                    detalhes?.moves.map((move, index)=>{
+                        return(
+                           <p key={index}> {move.move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
+
+                        )
+                     })
+                    :
+                    <p>O pokemon não possui movimentos</p>
+}
                 </DivMovimentos>
-
-
             </DivDetalhes>
- 
-
         </>
     )
 }
