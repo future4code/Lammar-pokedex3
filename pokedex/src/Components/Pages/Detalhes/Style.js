@@ -750,7 +750,75 @@ export const DivMovimentos=styled.div`
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    ::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-color: white;
+    }
+    ::-webkit-scrollbar{
+        width: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color:${(props)=>{
+        if(props.type === "electric"){
+            return "#FFF700"
+        }
+        else if (props.type === "water"){
+            return "#005570"
+        }
+        else if (props.type === "fire"){
+            return "#ff5e20"
+        }
+        else if (props.type === "grass"){
+            return "#104810"
+        }
+        else if (props.type === "fairy"){
+            return "#e75e7c"
+        }
+        else if (props.type === "flying"){
+            return "#7758d5"
+        }
+        else if (props.type === "fighting"){
+            return "#600904"
+        }
+        else if (props.type === "poison"){
+            return "#620562"
+        }
+        else if (props.type === "psychic"){
+            return "#c1265f"
+        }
+        else if (props.type === "ice"){
+            return "#0aa1a1"
+        }
+        else if (props.type === "dark"){
+            return "#48250d"
+        }
+        else if (props.type === "dragon"){
+            return "#3e1f89"
+        }
+        else if (props.type === "steel"){
+            return "#7d7d93"
+        }
+        else if (props.type === "ghost"){
+            return "#462d70"
+        }
+        else if (props.type === "ground"){
+            return "#b59335"
+        }
+        else if (props.type === "bug"){
+            return "#958d00"
+        }
+        else if (props.type === "rock"){
+            return "#816902"
+        }
+        else if  (props.type === "normal") {
+            return "#6456278a" 
+        }
+        else{
+            return "white"
+        }
+    }}
+    }
 
     h1{
         font-family: 'Rajdhani', sans-serif;
