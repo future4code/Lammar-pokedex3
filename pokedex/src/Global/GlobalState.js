@@ -8,28 +8,29 @@ export const GlobalState = (props) => {
     const [pokemonNames, setPokemonNames] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
-useEffect(()=>{
-    getPokemonNames()
-},[])
 
-useEffect(()=>{
-    const newList = []
-    pokemonNames.forEach((item)=>{
-        axios.get(`${baseUrl}${item.name}`)
-        .then((response)=>{
-            newList.push(response.data)
-            if(newList.length === 20){
-                const orderedList = newList.sort((a, b) =>{
-                    return a.id - b.id
-                })
+    useEffect(()=>{
+        getPokemonNames()
+    },[])
 
-                
-                setPokemons(orderedList)
-            }
+    useEffect(()=>{
+        const newList = []
+        pokemonNames.forEach((item)=>{
+            axios.get(`${baseUrl}${item.name}`)
+            .then((response)=>{
+                newList.push(response.data)
+                if(newList.length === 20){
+                    const orderedList = newList.sort((a, b) =>{
+                        return a.id - b.id
+                    })
+
+                    
+                    setPokemons(orderedList)
+                }
+            })
+            .catch((error)=> console.log(error.message))
         })
-        .catch((error)=> console.log(error.message))
-    })
-},[pokemonNames])
+    },[pokemonNames])
 
     const getPokemonNames = ()=>{
         axios.get(`${baseUrl}`)
