@@ -8,14 +8,14 @@ export function HomePage() {
     const {pokemons} = useContext(GlobalStateContext)
     return (
     <>
-     <Header/>
-     <PokeListContainer>
+    <Header/>
+    <PokeListContainer>
         {
-         pokemons&&pokemons.map((poke)=>{
-             return <Card key={poke.name} pokemon={poke}/>
-         })
+        pokemons&&pokemons.map((poke)=>{
+            return <Card key={poke.name} pokemon={poke}/>
+        })
         }   
-     </PokeListContainer>
-     </>
-     )
- }
+    </PokeListContainer>
+    </>
+    )
+}
