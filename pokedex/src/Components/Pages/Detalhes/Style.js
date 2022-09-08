@@ -4,12 +4,16 @@ export const Header=styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
-    height: 11vh;
+    max-width: 100vw;
+    min-height: 11vh;
+
     h1 {
         font-family: 'Pokemon Solid', sans-serif;
         font-size: 40px;
         font-weight: 100;
+        font-size: 35px;
+
+
         color: ${(props)=>{
         if(props.type === "electric"){
             return "#FFF700"
@@ -139,7 +143,7 @@ export const ButtonIcones=styled.button`
     background-color: transparent;
     cursor: pointer;
     color: white;
-    size: 40px;
+
     :hover {
         transition: .5s ease-in-out;
         color: ${(props)=>{
@@ -214,6 +218,7 @@ export const Button=styled.button`
     background-color: white;
     font-size: 16px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
     color: ${(props)=>{
         if(props.type === "electric"){
             return "#F5CA00"
@@ -341,11 +346,15 @@ export const Button=styled.button`
 
 export const DivDetalhes=styled.div`
     display: flex;
-    max-height: 89vh;
-    width: 100vw;
+    height: 89vh;
+    max-width: 100vw;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    @media (min-width: 280px) and (max-width: 899px){
+        flex-direction: row;
+        height: 100%;
+    }
 
     background: ${(props)=>{
         if(props.type === "electric"){
@@ -416,6 +425,13 @@ export const DivImagens=styled.div`
     height: 85vh;
     width: 20%;
     margin: 4vw 0 0 6vw;
+    @media (min-width: 900px) and (max-width: 1460px){
+        margin-top: 10vh;
+        margin-bottom: 3vh;
+    }
+    @media (min-width: 280px) and (max-width: 899px){
+        width: 80%;
+    }
 
     img{
         width: 30vh;
@@ -425,12 +441,27 @@ export const DivImagens=styled.div`
              transform: scale(1.3);
              transition: .6s ease;
         }
-    }
+        @media (min-width: 900px) and (max-width: 1460px){
+            width: 20vw;
+        }
+        @media (min-width: 280px) and (max-width: 899px){
+            max-width: 30vw;
+        }
+}
 
     h1{
         font-family: 'Rajdhani', sans-serif;
         color: white;
         margin-top: 2vh;
+        @media (min-width: 900px) and (max-width: 1460px){
+            font-size: 27px;
+        }
+        @media (min-width: 400px) and (max-width: 640px){
+            font-size: 25px;
+        }
+        @media (min-width: 280px) and (max-width: 399px){
+            font-size: 20px;
+        }
     }
 `
 
@@ -440,10 +471,15 @@ export const DivImagemFrontal=styled.div`
     justify-content: center;
     align-items: center;
     min-height: 30vh;
-    width: 80%;
+    width: 100%;
     border: 2px solid white;
     margin-bottom: 2vh;
     border-radius: 15px;
+    @media (min-width: 900px) and (max-width: 1460px){
+        width: 25vw;
+    }
+    @media (min-width: 280px) and (max-width: 899px){
+    }
 
     background-color: ${(props)=>{
         if(props.type === "electric"){
@@ -512,10 +548,13 @@ export const DivImagemCostas=styled.div`
     justify-content: center;
     align-items: center;
     min-height: 30vh;
-    width: 80%;
+    width: 100%;
     border: 2px solid white;
     margin-bottom: 2vh;
     border-radius: 15px;
+    @media (min-width: 900px) and (max-width: 1460px){
+        width: 25vw;
+    }
     
     background-color: ${(props)=>{
         if(props.type === "electric"){
@@ -576,19 +615,26 @@ export const DivImagemCostas=styled.div`
             return "#68A090"
         }
     }}
-
-    
 `
 
 export const DivDados=styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 9vh;
+    margin-top: 5vh;
     height: 58vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
-    
+    @media (min-width: 900px) and (max-width: 1460px){
+        width: 30%;
+        margin-top: 10vh;
+        margin-left: 2vh;
+    }
+    @media (min-width: 280px) and (max-width: 899px){
+        width: 65%;
+        margin-top: auto;
+        margin-left: 5vh;
+    }
 
     h1{
         font-family: 'Rajdhani', sans-serif;
@@ -672,11 +718,22 @@ export const DivTipos=styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 5vh;
+    margin-top: 3vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
     height: 12vh;
+    @media (min-width: 900px) and (max-width: 1460px){
+        width: 30%;
+        height: 10vh;
+        margin-top: 2vh;
+        margin-left: 2vh;
+    }
+    @media (min-width: 280px) and (max-width: 899px){
+        width: 65%;
+        margin-top: 2vh;
+        margin-left: 5vh;
+    }
 
     p{
         margin-left: 1vw;
@@ -750,12 +807,22 @@ export const DivTipos=styled.div`
 export const DivMovimentos=styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 9vh;
+    margin-top: 5vh;
     height: 75vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
     overflow-y: auto;
+    @media (min-width: 900px) and (max-width: 1460px){
+        width: 30%;
+        height: 70vh;
+    }
+    @media (min-width: 280px) and (max-width: 899px){
+        width: 65%;
+        margin-top: 2vh;
+        margin-left: 5vh;
+    }
+
     ::-webkit-scrollbar-thumb{
         border-radius: 5px;
         background-color: white;
