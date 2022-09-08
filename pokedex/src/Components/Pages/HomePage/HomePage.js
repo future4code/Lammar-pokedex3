@@ -5,17 +5,19 @@ import { Card } from "../../Card/Card";
 import { GlobalStateContext } from "../../../Global/GlobalStateContext";
 
 export function HomePage() {
+    
     const {pokemons} = useContext(GlobalStateContext)
+    
     return (
-    <>
-    <Header/>
-    <PokeListContainer>
-        {
-        pokemons&&pokemons.map((poke)=>{
-            return <Card key={poke.name} pokemon={poke}/>
-        })
-        }   
-    </PokeListContainer>
-    </>
+        <>
+            <Header/>
+            <PokeListContainer>
+                {
+                pokemons&&pokemons.map((poke)=>{
+                    return <Card key={poke.name} pokemon={poke}/>
+                })
+                }   
+            </PokeListContainer>
+        </>
     )
 }
