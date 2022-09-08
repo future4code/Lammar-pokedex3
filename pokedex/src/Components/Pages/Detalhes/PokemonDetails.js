@@ -47,23 +47,32 @@ export const PokemonDetails=()=>{
                 </DivImagens>
                 <DivDados type={detalhes?.types[0].type.name}>
                     <h1>Dados:</h1>
-                    <p>Experience: {detalhes?.base_experience}</p>   
+                    <p>Experiência: {detalhes?.base_experience}</p>   
                     <p>XP: {detalhes?.stats[0].base_stat}</p>
-                    <p>Attack: {detalhes?.stats[1].base_stat}</p>
-                    <p>Defense: {detalhes?.stats[2].base_stat}</p>
-                    <p>Special Attack: {detalhes?.stats[3].base_stat}</p>
-                    <p>Special Defense: {detalhes?.stats[4].base_stat}</p>
-                    <p>Speed: {detalhes?.stats[5].base_stat}</p>
+                    <p>Ataque: {detalhes?.stats[1].base_stat}</p>
+                    <p>Defesa: {detalhes?.stats[2].base_stat}</p>
+                    <p>Ataque especial: {detalhes?.stats[3].base_stat}</p>
+                    <p>Defesa especial: {detalhes?.stats[4].base_stat}</p>
+                    <p>Velocidade: {detalhes?.stats[5].base_stat}</p>
                 </DivDados>
                 <DivTipos type={detalhes?.types[0].type.name}>
-                    <p>Tipo: {detalhes?.types[0].type.name[0].toUpperCase(0) + detalhes?.types[0].type.name.substr(1)}</p>
+                        {detalhes?.types.length > 0 ?
+                        detalhes?.types.map((types, index)=>{
+                            return(
+                                <p key={index}> Tipo: {types.type.name}</p>
+                            )
+                        })
+                        :
+                        <p>O pokemon não possui imagens</p>
+                    }
+
                 </DivTipos>
                 <DivMovimentos type={detalhes?.types[0].type.name}>
-                    <h1>Movimentos</h1>
+                    <h1>Movimentos: </h1>
                     {detalhes?.moves.length > 0 ?
                     detalhes?.moves.map((move, index)=>{
                         return(
-                           <p key={index}> {move.move.name[0].toUpperCase(0) + detalhes?.moves[0].move.name.substr(1)}</p>
+                           <p key={index}> {move.move.name}</p>
 
                         )
                      })
