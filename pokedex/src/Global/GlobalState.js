@@ -8,6 +8,7 @@ export const GlobalState = (props) => {
     const [pokemonNames, setPokemonNames] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
+    const data = {pokemons, setPokemons, pokedex, setPokedex}
 
     useEffect(()=>{
         getPokemonNames()
@@ -23,8 +24,6 @@ export const GlobalState = (props) => {
                     const orderedList = newList.sort((a, b) =>{
                         return a.id - b.id
                     })
-
-                    
                     setPokemons(orderedList)
                 }
             })
@@ -37,7 +36,7 @@ export const GlobalState = (props) => {
         .then((response)=> setPokemonNames(response.data.results))
         .catch((error)=> console.log(error.message))
     }
-    const data = {pokemons, setPokemons, pokedex, setPokedex}
+    
     return(
         <GlobalStateContext.Provider value={data}>
             {props.children}
