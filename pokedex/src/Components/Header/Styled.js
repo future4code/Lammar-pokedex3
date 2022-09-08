@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   color: white;
   position: relative;
-  width: 100%;
+  max-width: 100vw;
 `;
 
 export const LeftHeaderButton = styled.button`
