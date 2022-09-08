@@ -8,7 +8,7 @@ export const GlobalState = (props) => {
     const [pokemonNames, setPokemonNames] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
-    const data = {pokemons, setPokemons, pokedex, setPokedex}
+    
 
     useEffect(()=>{
         getPokemonNames()
@@ -36,6 +36,17 @@ export const GlobalState = (props) => {
         .then((response)=> setPokemonNames(response.data.results))
         .catch((error)=> console.log(error.message))
     }
+
+    const addToPokedex = (name) =>{
+        for (let i = 0; i < pokemons.length; i++) {
+            if (pokemons[i].name === name) {
+                setPokedex([...pokedex, pokemons[i]])
+                alert('Pokemon added to Pokedex!')
+            }
+        }
+    }
+
+    const data = {pokemons, setPokemons, pokedex, setPokedex, addToPokedex}
     
     return(
         <GlobalStateContext.Provider value={data}>
