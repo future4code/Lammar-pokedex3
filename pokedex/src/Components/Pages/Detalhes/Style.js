@@ -4,8 +4,8 @@ export const Header=styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 99vw;
-    height: 10vh;
+    width: 100vw;
+    height: 11vh;
     h1 {
         font-family: 'Pokemon Solid', sans-serif;
         font-size: 40px;
@@ -341,8 +341,8 @@ export const Button=styled.button`
 
 export const DivDetalhes=styled.div`
     display: flex;
-    max-height: 90vh;
-    width: 99vw;
+    max-height: 89vh;
+    width: 100vw;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
@@ -415,10 +415,10 @@ export const DivImagens=styled.div`
     justify-content: center;
     height: 85vh;
     width: 20%;
-    margin: 2vw 0 0 6vw;
+    margin: 4vw 0 0 6vw;
 
     img{
-        width: 25vh;
+        width: 30vh;
         :hover{
             color: black;
             -webkit-transform: scale(1.3);
@@ -430,6 +430,7 @@ export const DivImagens=styled.div`
     h1{
         font-family: 'Rajdhani', sans-serif;
         color: white;
+        margin-top: 2vh;
     }
 `
 
@@ -441,7 +442,7 @@ export const DivImagemFrontal=styled.div`
     min-height: 30vh;
     width: 80%;
     border: 2px solid white;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     border-radius: 15px;
 
     background-color: ${(props)=>{
@@ -513,7 +514,7 @@ export const DivImagemCostas=styled.div`
     min-height: 30vh;
     width: 80%;
     border: 2px solid white;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     border-radius: 15px;
     
     background-color: ${(props)=>{
@@ -582,8 +583,8 @@ export const DivImagemCostas=styled.div`
 export const DivDados=styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
-    height: 75vh;
+    margin-top: 9vh;
+    height: 58vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
@@ -593,6 +594,8 @@ export const DivDados=styled.div`
         font-family: 'Rajdhani', sans-serif;
         color: white;
         text-align: center;
+        padding: 2vh 0 0.5vh 0;
+        border-bottom: 1px dotted white;
     }
 
     p{
@@ -600,6 +603,7 @@ export const DivDados=styled.div`
         margin-left: 20px;
         font-size: 25px;
         color: white;
+        padding-top: 3vh;
     }
 
     background-color: ${(props)=>{
@@ -671,14 +675,15 @@ export const DivTipos=styled.div`
     margin-top: 5vh;
     width: 20%;
     border: 2px solid white;
-    border-radius: 10px;
+    border-radius: 15px;
+    height: 12vh;
 
     p{
-        margin-left: 10px;
+        margin-left: 1vw;
         font-family: 'Rajdhani', sans-serif;
         font-size: 25px;
         color: white;
-        text-align: center;
+        text-align: start;
     }
 
     background-color: ${(props)=>{
@@ -745,24 +750,94 @@ export const DivTipos=styled.div`
 export const DivMovimentos=styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
-    height: 61vh;
+    margin-top: 9vh;
+    height: 75vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    ::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-color: white;
+    }
+    ::-webkit-scrollbar{
+        width: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color:${(props)=>{
+        if(props.type === "electric"){
+            return "#ff9f0e"
+        }
+        else if (props.type === "water"){
+            return "#005570"
+        }
+        else if (props.type === "fire"){
+            return "#ff5e20"
+        }
+        else if (props.type === "grass"){
+            return "#104810"
+        }
+        else if (props.type === "fairy"){
+            return "#e75e7c"
+        }
+        else if (props.type === "flying"){
+            return "#7758d5"
+        }
+        else if (props.type === "fighting"){
+            return "#600904"
+        }
+        else if (props.type === "poison"){
+            return "#620562"
+        }
+        else if (props.type === "psychic"){
+            return "#c1265f"
+        }
+        else if (props.type === "ice"){
+            return "#0aa1a1"
+        }
+        else if (props.type === "dark"){
+            return "#48250d"
+        }
+        else if (props.type === "dragon"){
+            return "#3e1f89"
+        }
+        else if (props.type === "steel"){
+            return "#7d7d93"
+        }
+        else if (props.type === "ghost"){
+            return "#462d70"
+        }
+        else if (props.type === "ground"){
+            return "#b59335"
+        }
+        else if (props.type === "bug"){
+            return "#958d00"
+        }
+        else if (props.type === "rock"){
+            return "#816902"
+        }
+        else if  (props.type === "normal") {
+            return "#6456278a" 
+        }
+        else{
+            return "white"
+        }
+    }}
+    }
 
     h1{
         font-family: 'Rajdhani', sans-serif;
         text-align: center;
         color: white;
+        padding: 2vh 0 0.5vh 0;
+        border-bottom: 1px dotted white;
     }
     p{
         font-family: 'Rajdhani', sans-serif;
         font-size: 25px;
         color: white;
-        text-align: start;
-        margin: 2px 30%;
+        text-align: center;
+        margin-top: 2vh;
     }
 
     background-color: ${(props)=>{
