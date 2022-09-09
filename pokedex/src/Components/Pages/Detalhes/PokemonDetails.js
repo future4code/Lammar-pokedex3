@@ -1,8 +1,11 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
-import { Button, ButtonIcones, DivDados, DivDetalhes, DivImagemCostas, DivImagemFrontal, DivImagens,  DivMovimentos,  DivTipos,  Header } from "./Style"
+import { DivDados, DivDetalhes, DivImagemCostas, DivImagemFrontal, DivImagens,  DivMovimentos,  DivTipos } from "./Style"
 import { BiArrowBack } from 'react-icons/bi'
+import { Header } from "../../Header/Header";
+import { Botao, ButtonIcones } from "../../Header/Styled"
+
 
 
 
@@ -31,8 +34,8 @@ export const PokemonDetails=()=>{
         <>
             <Header type={detalhes?.types[0].type.name}>
                 <ButtonIcones type={detalhes?.types[0].type.name} onClick={voltar} ><BiArrowBack size="40px" /></ButtonIcones>
-                <h1 >{detalhes?.name[0].toUpperCase(0) + detalhes?.name.substr(1)}</h1>
-                <Button type={detalhes?.types[0].type.name}>Adicionar/Remover da pokedex</Button>
+                 {detalhes?.name[0].toUpperCase(0) + detalhes?.name.substr(1)} 
+                <Botao type={detalhes?.types[0].type.name}>Adicionar/Remover da pokedex</Botao>
             </Header>
             <DivDetalhes type={detalhes?.types[0].type.name}>
                 <DivImagens>
