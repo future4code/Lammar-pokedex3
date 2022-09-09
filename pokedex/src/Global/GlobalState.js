@@ -20,7 +20,7 @@ export const GlobalState = (props) => {
             axios.get(`${baseUrl}${item.name}`)
             .then((response)=>{
                 newList.push(response.data)
-                if(newList.length === 100){
+                if(newList.length === 20){
                     const orderedList = newList.sort((a, b) =>{
                         return a.id - b.id
                     })
