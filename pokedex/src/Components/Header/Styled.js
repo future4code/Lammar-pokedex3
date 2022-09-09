@@ -25,8 +25,6 @@ export const TagHeader=styled.header`
             return "0"
           }
     }};
-
-
         color: ${(props)=>{
         if(props.type === "electric"){
             return "#FFF700"
