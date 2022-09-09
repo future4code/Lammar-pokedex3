@@ -225,12 +225,14 @@ export const BotaoTexto=styled.button`
   font-size: 22px;
   color: white;
   padding: 0 1vh;
+  border-radius: 10px;
 
 
     :hover{
       border-radius: 10px;
       padding: 0 1vh;
       color: white;
+      transition: .5s ease-in;
       background-color: ${(props)=>{
         if(props.type === "electric"){
             return "#FFF700"
