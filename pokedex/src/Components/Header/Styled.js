@@ -83,7 +83,7 @@ export const TagHeader=styled.header`
             return "#6456278a" 
         }
         else{
-            return "white"
+            return "#1165bd"
         }
     }}
 
@@ -145,7 +145,7 @@ export const TagHeader=styled.header`
             return "#9f8f5bd1" 
         }
         else{
-            return "#68A090"
+            return "#48afeb"
         }
     }}
 
@@ -153,13 +153,14 @@ export const TagHeader=styled.header`
 export const Botao=styled.button`
     margin: 0 20px;
     height: 5vh;
+    min-width: 20vh;
     padding: 0 2vh;
     border-radius: 15px;
     cursor: pointer;
     border: none;
     background-color: white;
-    font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
 
     color: ${(props)=>{
         if(props.type === "electric"){
@@ -217,7 +218,7 @@ export const Botao=styled.button`
             return "#6456278a" 
         }
         else{
-            return "#white"
+          return "#1165bd"
         }
     }};
 
@@ -280,7 +281,8 @@ export const Botao=styled.button`
             return "#6456278a" 
         }
         else{
-            return "#white"
+            return "#1165bd"
+
         }
     }};
     }

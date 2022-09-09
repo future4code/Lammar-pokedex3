@@ -16,7 +16,7 @@ export function HomePage() {
     return (
         <>
             <Header >
-                <Botao onClick={()=>goToPokedex(navigate("/pokedex"))}> Pokedex </Botao>
+                <Botao onClick={()=>goToPokedex(navigate("/pokedex"))}> Pokedéx </Botao>
                 Lista de Pokemons
             </Header>
             <PokeListContainer>
