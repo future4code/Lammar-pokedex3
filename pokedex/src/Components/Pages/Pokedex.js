@@ -4,7 +4,9 @@ import { useContext } from "react";
 import { GlobalStateContext } from "../../Global/GlobalStateContext";
 import { Card } from "../Card/Card";
 import { Header } from "../Header/Header"
-import { PokeListContainer } from "./HomePage/styled"
+import { DivCard, PokeListContainer } from "./HomePage/styled"
+import { Botao } from "../Header/Styled";
+import { goToHomePage, goToPokedex } from "../Coordinator";
 
 export function Pokedex() {
 
@@ -14,9 +16,11 @@ export function Pokedex() {
 
     return (
         <>
-            <Header/>
+            <Header>
+                <Botao onClick={()=>goToHomePage(navigate ("/"))}> Lista de Pokemons </Botao>
+                Pokedéx
+            </Header>
             <PokeListContainer>
-            <h1>Pokedex</h1>
             {pokedex.length < 1 && <p>A Pokedex está vazia.</p>}
             <>
                 {

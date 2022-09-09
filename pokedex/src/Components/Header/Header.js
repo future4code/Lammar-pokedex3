@@ -1,17 +1,15 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
-import {HeaderContainer, RightHeaderButton} from "./Styled"
+import { TagHeader } from "./Styled"
 
-export const Header = ()=>{
+export const Header = (props)=>{
 
     const navigate = useNavigate()
 
     return (
-        <HeaderContainer>
-            <h1>Pokemons</h1>
-            <RightHeaderButton 
-                onClick={() => navigate('/pokedex')}>
-                Ir para pokedex
-            </RightHeaderButton>
-        </HeaderContainer>)
+        <TagHeader elementos={props.children}>
+            {props.children[0]}
+            <h1>{props.children[1]}</h1>
+            {props.children[2]}
+        </TagHeader>)
 }

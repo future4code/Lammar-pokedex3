@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom"
-import { ButtonsContainer, PokeCardContainer, PokeImg, ImgContainer } from "./Styled"
+import { ButtonsContainer, PokeCardContainer, PokeImg, ImgContainer, BotaoIcones, BotaoTexto } from "./Styled"
 import { goToDetails } from "../Coordinator"
 import { GlobalStateContext } from "../../Global/GlobalStateContext"
+import {RiAddFill} from 'react-icons/ri'
+import { PokemonDetails } from "../Pages/Detalhes/PokemonDetails";
+
 
 export function Card({pokemon}){
     
@@ -11,20 +14,20 @@ export function Card({pokemon}){
     const { addToPokedex } = useContext(GlobalStateContext)
 
     return (
-        <PokeCardContainer>
-        <ImgContainer>
+        <PokeCardContainer type={pokemon?.types[0].type.name}>
+        <ImgContainer  type={pokemon?.types[0].type.name}>
             <PokeImg
                 src={pokemon.sprites && pokemon.sprites.front_default}
                 alt={pokemon.name}
             />
         </ImgContainer>
         <ButtonsContainer>
-            <button onClick={() => addToPokedex(pokemon.name)}>
-                Adicionar a Pokedex
-            </button>
-            <button onClick={()=>goToDetails(navigate, pokemon.name)}>
-                Ver detalhes
-            </button>
+            <BotaoIcones type={pokemon?.types[0].type.name} onClick={() => addToPokedex(pokemon.name)}>
+                <RiAddFill size="35px" />
+            </BotaoIcones>
+            <BotaoTexto type={pokemon?.types[0].type.name} onClick={()=>goToDetails(navigate, pokemon.name)}>
+                Detalhes
+            </BotaoTexto>
         </ButtonsContainer> 
         </PokeCardContainer>)
 }
