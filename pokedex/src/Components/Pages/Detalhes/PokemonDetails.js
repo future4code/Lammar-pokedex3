@@ -1,5 +1,5 @@
 import axios from "axios"
-import React, { useEffect, useState } from "react"
+import React, {useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { DivDados, DivDetalhes, DivImagemCostas, DivImagemFrontal, DivImagens,  DivMovimentos,  DivTipos } from "./Style"
 import { BiArrowBack } from 'react-icons/bi'
@@ -32,7 +32,7 @@ export const PokemonDetails=()=>{
             <Header type={detalhes?.types[0].type.name}>
                 <ButtonIcones type={detalhes?.types[0].type.name} onClick={voltar} ><BiArrowBack size="40px" /></ButtonIcones>
                  {detalhes?.name[0].toUpperCase(0) + detalhes?.name.substr(1)} 
-                <Botao type={detalhes?.types[0].type.name}>Adicionar/Remover da pokedex</Botao>
+                <Botao type={detalhes?.types[0].type.name}> Adicionar/Remover da pokedex</Botao>
             </Header>
             <DivDetalhes type={detalhes?.types[0].type.name}>
                 <DivImagens>
