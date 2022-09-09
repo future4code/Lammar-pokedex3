@@ -6,9 +6,6 @@ import { BiArrowBack } from 'react-icons/bi'
 import { Header } from "../../Header/Header";
 import { Botao, ButtonIcones } from "../../Header/Styled"
 
-
-
-
 export const PokemonDetails=()=>{
     const navigate=useNavigate()
     const param=useParams()

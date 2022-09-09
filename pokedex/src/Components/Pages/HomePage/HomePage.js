@@ -3,7 +3,7 @@ import { Header } from "../../Header/Header";
 import {PokeListContainer} from "./styled"
 import { Card } from "../../Card/Card";
 import { GlobalStateContext } from "../../../Global/GlobalStateContext";
-import { goToPokedex, voltar } from "../../Coordinator"
+import { goToPokedex  } from "../../Coordinator"
 import { useNavigate } from "react-router-dom";
 import { Botao } from "../../Header/Styled";
 
