@@ -40,8 +40,12 @@ export const GlobalState = (props) => {
     const addToPokedex = (name) =>{
         for (let i = 0; i < pokemons.length; i++) {
             if (pokemons[i].name === name) {
-                setPokedex([...pokedex, pokemons[i]])
-                alert('Pokemon added to Pokedex!')
+                if (!pokedex.includes(pokemons[i])) {
+                    setPokedex([...pokedex, pokemons[i]])
+                    alert('Pokemon adicionado a Pokedex!')
+                }else{
+                    alert('Pokedex já possui esse Pokemon.')
+                }
             }
         }
     }
