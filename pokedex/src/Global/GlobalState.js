@@ -2,6 +2,9 @@ import axios from "axios"
 import React, {useEffect, useState} from "react"
 import {baseUrl} from "../Components/Constants"
 import { GlobalStateContext } from "./GlobalStateContext"
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 
 export const GlobalState = (props) => {
@@ -42,9 +45,25 @@ export const GlobalState = (props) => {
             if (pokemons[i].name === name) {
                 if (!pokedex.includes(pokemons[i])) {
                     setPokedex([...pokedex, pokemons[i]])
-                    alert('Pokemon adicionado a Pokedex!')
+                    toast.success('Pokemon adicionado a pokedéx!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });
                 }else{
-                    alert('Pokedex já possui esse Pokemon.')
+                    toast.warn('Pokemon já inserido na pokedéx', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });
                 }
             }
         }
