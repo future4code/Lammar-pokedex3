@@ -20,7 +20,7 @@ export const GlobalState = (props) => {
             axios.get(`${baseUrl}${item.name}`)
             .then((response)=>{
                 newList.push(response.data)
-                if(newList.length === 20){
+                if(newList.length === 100){
                     const orderedList = newList.sort((a, b) =>{
                         return a.id - b.id
                     })
@@ -32,7 +32,7 @@ export const GlobalState = (props) => {
     },[pokemonNames])
 
     const getPokemonNames = ()=>{
-        axios.get(`${baseUrl}`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`)
         .then((response)=> setPokemonNames(response.data.results))
         .catch((error)=> console.log(error.message))
     }
