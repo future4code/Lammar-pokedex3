@@ -8,5 +8,11 @@ export const PokeListContainer = styled.main`
     justify-content: center;
     align-items: center;
     background-color: #90baee6e;
+
+    P{
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 30px;
+        color: #1165bd;
+    }
 `;
 
