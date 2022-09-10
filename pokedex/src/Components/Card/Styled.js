@@ -68,7 +68,23 @@ export const PokeCardContainer = styled.div`
         else{
             return "#white"
         }
-    }}
+    }};
+
+    @media (min-width: 1100px) and (max-width: 600px){
+        width: 15vw;
+        min-height: 35vh;
+    }
+
+    @media (min-width: 880px) and (max-width: 1099px){
+        width: 20vw;
+        height: 10vh;
+    }
+    @media (min-width: 630px) and (max-width: 879px){
+        min-width: 40vw;
+    }
+    @media (min-width: 260px) and (max-width: 630px){
+        width: 70vw;
+    }
 `;
 
 export const ImgContainer = styled.div`
@@ -138,6 +154,18 @@ export const ImgContainer = styled.div`
 
 export const PokeImg = styled.img`
   min-width: 12vw;
+  @media (min-width: 900px) and (max-width: 1460px){
+        width: 15vw;
+    }
+    @media (min-width: 880px) and (max-width: 1099px){
+        width: 20vw;
+    }
+    @media (min-width: 630px) and (max-width: 879px){
+        width: 35vw;
+    }
+    @media (min-width: 260px) and (max-width: 630px){
+        width: 60vw;
+    }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -151,6 +179,10 @@ export const BotaoIcones=styled.button`
     color: white;
     border: none;
     cursor: pointer;
+
+    @media (min-width: 200px) and (max-width: 699px){
+        margin-bottom: 5vh;
+    }
 
     :hover{
       color: ${(props)=>{
@@ -226,6 +258,9 @@ export const BotaoTexto=styled.button`
   color: white;
   padding: 0 1vh;
   border-radius: 10px;
+  @media (min-width: 200px) and (max-width: 699px){
+        margin-bottom: 5vh;
+    }
 
 
     :hover{
