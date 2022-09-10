@@ -171,12 +171,17 @@ export const PokeImg = styled.img`
         width: 60vw;
         height: 65vw;
     }
+    :hover{
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: .6s ease;
+    }
 `;
 
 export const ButtonsContainer = styled.div`
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
 `;
 
 export const BotaoIcones=styled.button`
@@ -190,7 +195,7 @@ export const BotaoIcones=styled.button`
     }
 
     :hover{
-      color: ${(props)=>{
+        color: ${(props)=>{
         if(props.type === "electric"){
             return "#FFF700"
         }
