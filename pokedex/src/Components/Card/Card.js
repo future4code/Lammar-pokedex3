@@ -35,6 +35,6 @@ export function Card({pokemon}){
             <BotaoTexto type={pokemon?.types[0].type.name} onClick={()=>goToDetails(navigate, pokemon.name)}>
                 Detalhes
             </BotaoTexto>
-        </ButtonsContainer> 
+        </ButtonsContainer>
         </PokeCardContainer>)
 }

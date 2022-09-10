@@ -75,7 +75,7 @@ export const PokemonDetails=()=>{
                     <p>Defesa especial: {detalhes?.stats[4].base_stat}</p>
                     <p>Velocidade: {detalhes?.stats[5].base_stat}</p>
                 </DivDados>
-                <DivTipos type={detalhes?.types[0].type.name}>
+                <DivTipos type={detalhes?.types[0].type.name} >
                         {detalhes?.types.length > 0 ?
                         detalhes?.types.map((types, index)=>{
                             return(

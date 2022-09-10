@@ -13,6 +13,8 @@ export function Pokedex() {
     const navigate = useNavigate()
 
     const { pokedex } = useContext(GlobalStateContext)
+
+    
     
     return (
         <>
@@ -22,13 +24,15 @@ export function Pokedex() {
             </Header>
 
             <PokeListContainer>
+
             {pokedex.length < 1 && <p>A Pokedex está vazia.</p>}
             <>
                 {
                 pokedex&&pokedex.map((poke)=>{
-                    return <Card key={poke.name} pokemon={poke}/>
+                    return <Card key={poke.name} pokemon={poke} />
                 })
                 } 
+
             </>
             </PokeListContainer>
         </>
