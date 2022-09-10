@@ -1,19 +1,32 @@
 import axios from "axios"
-import React, {useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { DivDados, DivDetalhes, DivImagemCostas, DivImagemFrontal, DivImagens,  DivMovimentos,  DivTipos } from "./Style"
 import { BiArrowBack } from 'react-icons/bi'
 import { Header } from "../../Header/Header";
 import { Botao, ButtonIcones } from "../../Header/Styled"
+import { GlobalStateContext } from "../../../Global/GlobalStateContext"
 
 export const PokemonDetails=()=>{
     const navigate=useNavigate()
     const param=useParams()
     const [detalhes, setDetalhes]=useState()
+    const { addOrRemoveFromPokedex, pokedex } = useContext(GlobalStateContext)
+    const [onPokedex, setOnPokedex] = useState()
 
     useEffect(()=>{
         requisicaoDetalhes()
     }, [])
+
+    useEffect(() => {
+        verificaPokedex()
+    }, [pokedex])
+
+
+    const verificaPokedex = () => {
+        setOnPokedex( pokedex.find( pokemon => pokemon.name === param.name) )
+    }
+
 
     function requisicaoDetalhes(){
         const UrlPokemon= `https://pokeapi.co/api/v2/pokemon/${param.name}`
@@ -30,9 +43,16 @@ export const PokemonDetails=()=>{
     return(
         <>
             <Header type={detalhes?.types[0].type.name}>
-                <ButtonIcones type={detalhes?.types[0].type.name} onClick={voltar} ><BiArrowBack size="40px" /></ButtonIcones>
-                 {detalhes?.name[0].toUpperCase(0) + detalhes?.name.substr(1)} 
-                <Botao type={detalhes?.types[0].type.name}> Adicionar/Remover da pokedex</Botao>
+                <ButtonIcones 
+                    type={detalhes?.types[0].type.name}
+                    onClick={voltar}>
+                <BiArrowBack size="40px" /></ButtonIcones>
+                    {detalhes?.name[0].toUpperCase(0) + detalhes?.name.substr(1)} 
+                <Botao 
+                    type={detalhes?.types[0].type.name}
+                    onClick={() => addOrRemoveFromPokedex(detalhes.name)}>
+                    {!onPokedex ? "Adicionar" : "Remover"} da pokedex
+                </Botao>
             </Header>
             <DivDetalhes type={detalhes?.types[0].type.name}>
                 <DivImagens>
@@ -72,10 +92,10 @@ export const PokemonDetails=()=>{
                     {detalhes?.moves.length > 0 ?
                     detalhes?.moves.map((move, index)=>{
                         return(
-                           <p key={index}> {move.move.name}</p>
+                            <p key={index}> {move.move.name}</p>
 
                         )
-                     })
+                    })
                     :
                     <p>O pokemon não possui movimentos</p>
 }

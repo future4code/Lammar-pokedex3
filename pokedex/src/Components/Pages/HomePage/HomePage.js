@@ -10,7 +10,6 @@ import { Botao } from "../../Header/Styled";
 export function HomePage() {
     const navigate = useNavigate()
 
-    
     const {pokemons} = useContext(GlobalStateContext)
     
     return (
