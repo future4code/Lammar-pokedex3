@@ -11,11 +11,22 @@ export const PokemonDetails=()=>{
     const navigate=useNavigate()
     const param=useParams()
     const [detalhes, setDetalhes]=useState()
-    const { addOrRemoveFromPokedex } = useContext(GlobalStateContext)
+    const { addOrRemoveFromPokedex, pokedex } = useContext(GlobalStateContext)
+    const [onPokedex, setOnPokedex] = useState()
 
     useEffect(()=>{
         requisicaoDetalhes()
     }, [])
+
+    useEffect(() => {
+        verificaPokedex()
+    }, [pokedex])
+
+
+    const verificaPokedex = () => {
+        setOnPokedex( pokedex.find( pokemon => pokemon.name === param.name) )
+    }
+
 
     function requisicaoDetalhes(){
         const UrlPokemon= `https://pokeapi.co/api/v2/pokemon/${param.name}`
@@ -40,7 +51,7 @@ export const PokemonDetails=()=>{
                 <Botao 
                     type={detalhes?.types[0].type.name}
                     onClick={() => addOrRemoveFromPokedex(detalhes.name)}>
-                    Adicionar/Remover da pokedex
+                    {!onPokedex ? "Adicionar" : "Remover"} da pokedex
                 </Botao>
             </Header>
             <DivDetalhes type={detalhes?.types[0].type.name}>
