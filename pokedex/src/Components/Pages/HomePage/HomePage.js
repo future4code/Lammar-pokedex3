@@ -10,7 +10,7 @@ import { Botao } from "../../Header/Styled";
 export function HomePage() {
     const navigate = useNavigate()
 
-    const {pokemons} = useContext(GlobalStateContext)
+    const {pokemons, nextPage, previousPage} = useContext(GlobalStateContext)
     
     return (
         <>
@@ -18,6 +18,7 @@ export function HomePage() {
                 <Botao onClick={()=>goToPokedex(navigate("/pokedex"))}> Pokedéx </Botao>
                 Lista de Pokemons
             </Header>
+            <button onClick={nextPage}>Next</button>
             <PokeListContainer>
                 {
                 pokemons&&pokemons.map((poke)=>{
