@@ -7,12 +7,22 @@ import { toast } from 'react-toastify';
 export const GlobalState = (props) => {
     const [pokemonNames, setPokemonNames] = useState([])
     const [pokemons, setPokemons] = useState([])
-    const [pokedex, setPokedex] = useState([])
     const [pagination, setPagination] = useState(0)
+    
+    // Keep pokedex items after refreshing the browser
+    const [pokedex, setPokedex] = useState(() => {
+        const stored = localStorage.getItem('pokedex')
+        const initialValue = JSON.parse(stored)
+        return initialValue || ""
+    })
 
     useEffect(()=>{
         getPokemonNames()
     },[pagination])
+
+    useEffect(() =>{
+        localStorage.setItem("pokedex", JSON.stringify(pokedex))
+    }, [pokedex])
 
     useEffect(()=>{
         const newList = []
@@ -41,7 +51,7 @@ export const GlobalState = (props) => {
         for (let i = 0; i < pokemons.length; i++) {
             if (pokemons[i].name === name) {
                 if (!pokedex.includes(pokemons[i])) {
-                    setPokedex([...pokedex, pokemons[i]])
+                    localStorage.setItem("pokedex", JSON.stringify([...pokedex, pokemons[i]]))
                     toast.success('Pokemon adicionado à Pokedéx!', {
                         position: "top-right",
                         autoClose: 5000,
