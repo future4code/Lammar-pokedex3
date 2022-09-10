@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useContext } from "react";
 import { GlobalStateContext } from "../../Global/GlobalStateContext";
@@ -13,7 +13,7 @@ export function Pokedex() {
     const navigate = useNavigate()
 
     const { pokedex } = useContext(GlobalStateContext)
-
+    
     return (
         <>
             <Header>

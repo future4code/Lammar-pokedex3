@@ -7,7 +7,6 @@ export const PokeCardContainer = styled.div`
     align-items: center;
     min-width: 10vw;
     min-height: 35vh;
-    /* border: 2px dashed white; */
     box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.5);
     margin: 35px 5px 8px 5px;
     border-radius: 20px;
