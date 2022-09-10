@@ -18,7 +18,8 @@ export function HomePage() {
                 <Botao onClick={()=>goToPokedex(navigate("/pokedex"))}> Pokedéx </Botao>
                 Lista de Pokemons
             </Header>
-            <button onClick={nextPage}>Next</button>
+            <button onClick={previousPage}>Página anterior</button>
+            <button onClick={nextPage}>Próxima página</button>
             <PokeListContainer>
                 {
                 pokemons&&pokemons.map((poke)=>{

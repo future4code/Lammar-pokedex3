@@ -15,7 +15,7 @@ export const GlobalState = (props) => {
 
     useEffect(()=>{
         getPokemonNames()
-    },[])
+    },[pagination])
 
     useEffect(()=>{
         const newList = []
@@ -102,12 +102,12 @@ export const GlobalState = (props) => {
 
     const nextPage = () => {
         setPagination(pagination+30)
-        // getPokemonNames()
     }
 
     const previousPage = () => {
-        setPagination(pagination-30)
-        // INCLUIR LOGICA PARA EVITAR NEGATIVOS
+        if (pagination > 0) {
+            setPagination(pagination-30)
+        }
     }
 
     const data = {pokemons, setPokemons, pokedex,
