@@ -10,7 +10,7 @@ export const TagHeader=styled.header`
       }
     }};
     align-items: center;
-    width: 100vw;
+    max-width: 100vw;
     min-height: 11vh;
     position: relative;
 
