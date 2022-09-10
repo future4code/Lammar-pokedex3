@@ -20,6 +20,7 @@ export function Pokedex() {
                 <Botao onClick={()=>goToHomePage(navigate ("/"))}> Lista de Pokemons </Botao>
                 Pokedéx
             </Header>
+
             <PokeListContainer>
             {pokedex.length < 1 && <p>A Pokedex está vazia.</p>}
             <>
