@@ -11,11 +11,11 @@ export const GlobalState = (props) => {
     const [pokemonNames, setPokemonNames] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [pokedex, setPokedex] = useState([])
-    
+    const [pagination, setPagination] = useState(0)
 
     useEffect(()=>{
         getPokemonNames()
-    },[])
+    },[pagination])
 
     useEffect(()=>{
         const newList = []
@@ -23,7 +23,7 @@ export const GlobalState = (props) => {
             axios.get(`${baseUrl}${item.name}`)
             .then((response)=>{
                 newList.push(response.data)
-                if(newList.length === 100){
+                if(newList.length === 30){
                     const orderedList = newList.sort((a, b) =>{
                         return a.id - b.id
                     })
@@ -35,7 +35,7 @@ export const GlobalState = (props) => {
     },[pokemonNames])
 
     const getPokemonNames = ()=>{
-        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`)
+        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${pagination}`)
         .then((response)=> setPokemonNames(response.data.results))
         .catch((error)=> console.log(error.message))
     }
@@ -100,8 +100,19 @@ export const GlobalState = (props) => {
         }
     }
 
+    const nextPage = () => {
+        setPagination(pagination+30)
+    }
+
+    const previousPage = () => {
+        if (pagination > 0) {
+            setPagination(pagination-30)
+        }
+    }
+
     const data = {pokemons, setPokemons, pokedex,
-                setPokedex, addToPokedex, addOrRemoveFromPokedex}
+                setPokedex, addToPokedex, addOrRemoveFromPokedex,
+                nextPage, previousPage}
     
     return(
         <GlobalStateContext.Provider value={data}>
