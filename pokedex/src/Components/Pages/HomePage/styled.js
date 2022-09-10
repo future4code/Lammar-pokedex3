@@ -14,5 +14,7 @@ export const PokeListContainer = styled.main`
         font-size: 30px;
         color: #1165bd;
     }
+
+
 `;
 

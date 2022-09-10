@@ -10,21 +10,17 @@ export const TagHeader=styled.header`
       }
     }};
     align-items: center;
-    max-width: 100vw;
+    width: 100vw;
     min-height: 11vh;
+    position: relative;
 
     h1 {
         font-family: 'Pokemon Solid', sans-serif;
         font-size: 40px;
         font-weight: 100;
-        font-size: 35px;
-        margin-left: ${(props)=>{
-          if(props.elementos.length === 2){
-            return "35%"
-          } else {
-            return "0"
-          }
-    }};
+        position: absolute;
+        right: 50vw;
+        transform: translate(50%);
         color: ${(props)=>{
         if(props.type === "electric"){
             return "#FFF700"
@@ -83,7 +79,14 @@ export const TagHeader=styled.header`
         else{
             return "#1165bd"
         }
-    }}
+    }};
+        @media (min-width: 700px) and (max-width: 934px){
+            font-size: 35px;
+            
+    }
+        @media (min-width: 200px) and (max-width: 699px){
+            font-size: 25px;
+    }
 
     }
 
@@ -159,6 +162,10 @@ export const Botao=styled.button`
     background-color: white;
     font-size: 20px;
     font-family: 'Rajdhani', sans-serif;
+
+    @media (min-width: 200px) and (max-width: 699px){
+        min-width: 10vh;
+    }
 
     color: ${(props)=>{
         if(props.type === "electric"){
