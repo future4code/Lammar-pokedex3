@@ -153,8 +153,12 @@ export const ImgContainer = styled.div`
 `
 
 export const PokeImg = styled.img`
-  min-width: 12vw;
-  @media (min-width: 900px) and (max-width: 1460px){
+    min-width: 12vw;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    transition: .6s ease;
+    
+    @media (min-width: 900px) and (max-width: 1460px){
         width: 15vw;
     }
     @media (min-width: 880px) and (max-width: 1099px){
@@ -166,12 +170,17 @@ export const PokeImg = styled.img`
     @media (min-width: 260px) and (max-width: 630px){
         width: 60vw;
     }
+    :hover{
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: .6s ease;
+    }
 `;
 
 export const ButtonsContainer = styled.div`
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
 `;
 
 export const BotaoIcones=styled.button`
@@ -185,7 +194,7 @@ export const BotaoIcones=styled.button`
     }
 
     :hover{
-      color: ${(props)=>{
+        color: ${(props)=>{
         if(props.type === "electric"){
             return "#FFF700"
         }
