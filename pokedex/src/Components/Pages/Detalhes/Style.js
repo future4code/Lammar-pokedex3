@@ -228,7 +228,17 @@ export const DivImagens=styled.div`
     }
 
     img{
-
+         width: 30vh;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        transition: .6s ease;
+    
+        :hover{
+            color: black;
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            transition: .6s ease;
+        }
         @media (min-width: 900px) and (max-width: 1460px){
             width: 20vw;
         }

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from 'react-router-dom'
 import { useContext } from "react";
 import { GlobalStateContext } from "../../Global/GlobalStateContext";
 import { Card } from "../Card/Card";
 import { Header } from "../Header/Header"
-import { DivCard, PokeListContainer } from "./HomePage/styled"
+import { PokeListContainer } from "./HomePage/styled"
 import { Botao } from "../Header/Styled";
-import { goToHomePage, goToPokedex } from "../Coordinator";
+import { goToHomePage } from "../Coordinator";
 
 export function Pokedex() {
 

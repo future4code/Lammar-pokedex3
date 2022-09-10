@@ -9,7 +9,6 @@ import {BsTrash} from 'react-icons/bs'
 
 export function Card({pokemon}){
     const navigate = useNavigate()
-
     const { addOrRemoveFromPokedex, pokedex } = useContext(GlobalStateContext)
     const [onPokedex, setOnPokedex] = useState()
 
@@ -20,7 +19,6 @@ export function Card({pokemon}){
     useEffect(() => {
         verificaPokedex()
     }, [pokedex])
-
 
     return (
         <PokeCardContainer type={pokemon?.types[0].type.name}>
