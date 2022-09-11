@@ -157,6 +157,7 @@ export const PokeImg = styled.img`
     -webkit-transform: scale(1);
     transform: scale(1);
     transition: .6s ease;
+    cursor: pointer;
     
     @media (min-width: 900px) and (max-width: 1460px){
         width: 15vw;

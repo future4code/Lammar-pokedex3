@@ -26,6 +26,7 @@ export function Card({pokemon}){
             <PokeImg
                 src={pokemon.sprites && pokemon.sprites.front_default}
                 alt={pokemon.name}
+                onClick={()=>goToDetails(navigate, pokemon.name)}
             />
         </ImgContainer>
         <ButtonsContainer>
