@@ -27,6 +27,7 @@ console.log(pokemon);
             <PokeImg
                 src={pokemon.sprites && pokemon.sprites.other.home.front_default}
                 alt={pokemon.name}
+                onClick={()=>goToDetails(navigate, pokemon.name)}
             />
         </ImgContainer>
         <ButtonsContainer>
