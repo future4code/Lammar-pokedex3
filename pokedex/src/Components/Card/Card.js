@@ -9,10 +9,6 @@ import {BsTrash} from 'react-icons/bs'
 
 export function Card({pokemon}){
     const navigate = useNavigate()
-
-
-
-
     const { addOrRemoveFromPokedex, pokedex } = useContext(GlobalStateContext)
     const [onPokedex, setOnPokedex] = useState()
 
@@ -40,6 +36,6 @@ console.log(pokemon);
             <BotaoTexto type={pokemon?.types[0].type.name} onClick={()=>goToDetails(navigate, pokemon.name)}>
                 Detalhes
             </BotaoTexto>
-        </ButtonsContainer> 
+        </ButtonsContainer>
         </PokeCardContainer>)
 }

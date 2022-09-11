@@ -12,6 +12,7 @@ function App() {
     <GlobalState>
       <GlobalStyle/>
       <ToastContainer />
+
       <RoutesComponent/>
     </GlobalState>
   );

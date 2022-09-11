@@ -218,8 +218,7 @@ export const DivImagens=styled.div`
     justify-content: center;
     height: 85vh;
     width: 20%;
-    margin: 4vw 0 0 6vw;
-
+    margin: 1vh 0 0 8vw;
     @media (min-width: 900px) and (max-width: 1460px){
         margin-top: 10vh;
         margin-bottom: 3vh;
@@ -229,7 +228,7 @@ export const DivImagens=styled.div`
     }
 
     img{
-        width: 30vh;
+         width: 30vh;
         -webkit-transform: scale(1);
         transform: scale(1);
         transition: .6s ease;
@@ -269,11 +268,20 @@ export const DivImagemFrontal=styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 30vh;
+    height: 35vh;
     width: 100%;
     border: 2px solid white;
     margin-bottom: 2vh;
     border-radius: 15px;
+
+    img{
+        margin-bottom: 5vh;
+        width: 25vh;
+        :hover{
+             transform: scale(1.3);
+             transition: .6s ease;
+        }
+    }
     @media (min-width: 900px) and (max-width: 1460px){
         width: 25vw;
     }
@@ -346,11 +354,19 @@ export const DivImagemCostas=styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 30vh;
+    height: 35vh;
     width: 100%;
     border: 2px solid white;
     margin-bottom: 2vh;
     border-radius: 15px;
+    img{
+        width: 30vh;
+
+        :hover{
+             transform: scale(1.2);
+             transition: .6s ease;
+        }
+    }
     @media (min-width: 900px) and (max-width: 1460px){
         width: 25vw;
     }
@@ -419,7 +435,6 @@ export const DivImagemCostas=styled.div`
 export const DivDados=styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
     height: 58vh;
     width: 20%;
     border: 2px solid white;
@@ -517,11 +532,14 @@ export const DivTipos=styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 3vh;
+    margin-top: 2vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
-    height: 12vh;
+    height: auto;
+    margin: 8vh 0 1vh 0;
+
+
     @media (min-width: 900px) and (max-width: 1460px){
         width: 30%;
         height: 10vh;
@@ -606,12 +624,12 @@ export const DivTipos=styled.div`
 export const DivMovimentos=styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
-    height: 75vh;
+    height: 72vh;
     width: 20%;
     border: 2px solid white;
     border-radius: 15px;
     overflow-y: auto;
+    margin-bottom: 2vh;
     @media (min-width: 900px) and (max-width: 1460px){
         width: 30%;
         height: 70vh;

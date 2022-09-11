@@ -9,7 +9,7 @@ export const Header = (props)=>{
     const navigate = useNavigate()
 
     return (
-        <TagHeader type={props.type} elementos={props.children} >
+        <TagHeader type={props.type} elementos={props.children}>
             {props.children[0]}
             <h1>{props.children[1]}</h1>
             {props.children[2]}
