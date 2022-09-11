@@ -7,9 +7,19 @@ import { toast } from 'react-toastify';
 export const GlobalState = (props) => {
     const [pokemonNames, setPokemonNames] = useState([])
     const [pokemons, setPokemons] = useState([])
-    const [pokedex, setPokedex] = useState([])
     const [pagination, setPagination] = useState(0)
+    
+    // Keep pokedex items after refreshing the browser
+    const [pokedex, setPokedex] = useState(() => {
+        const stored = localStorage.getItem('pokedex')
+        const initialValue = JSON.parse(stored)
+        return initialValue || []
+    })
+    useEffect(() =>{
+        localStorage.setItem("pokedex", JSON.stringify(pokedex))
+    }, [pokedex])
 
+    // Pagination control
     useEffect(()=>{
         getPokemonNames()
     },[pagination])
@@ -37,63 +47,33 @@ export const GlobalState = (props) => {
         .catch((error)=> console.log(error.message))
     }
 
-    const addToPokedex = (name) =>{
-        for (let i = 0; i < pokemons.length; i++) {
-            if (pokemons[i].name === name) {
-                if (!pokedex.includes(pokemons[i])) {
-                    setPokedex([...pokedex, pokemons[i]])
-                    toast.success('Pokemon adicionado à Pokedéx!', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        });
-                }else{
-                    toast.warn('Pokemon já inserido na Pokedéx!', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        });
-                }
-            }
-        }
-    }
-
     const addOrRemoveFromPokedex = (name) => {
-        for (let i = 0; i < pokemons.length; i++) {
-            if (pokemons[i].name === name) {
-                if (!pokedex.includes(pokemons[i])) {
-                    setPokedex([...pokedex, pokemons[i]])
-                    toast.success('Pokemon adicionado à Pokedéx!', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        });
-                }else{
-                    let newPokedex = pokedex.filter(e => e !== pokemons[i])
-                    setPokedex(newPokedex)
-                    toast.warn('Pokemon removido da Pokedéx!', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        });
-                }
-            }
+        let newPokemon = pokemons.find( pokemon => pokemon.name === name)
+        let onPokedex = pokedex.find ( pokemon => newPokemon.name === pokemon.name )
+
+        if (!onPokedex) {
+            setPokedex([...pokedex, newPokemon])
+            toast.success('Pokemon adicionado à Pokedéx!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }else{
+            let newPokedex = pokedex.filter(e => e !== newPokemon)
+            setPokedex(newPokedex)
+            toast.warn('Pokemon removido da Pokedéx!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                })
         }
     }
 
@@ -108,7 +88,7 @@ export const GlobalState = (props) => {
     }
 
     const data = {pokemons, setPokemons, pokedex,
-                setPokedex, addToPokedex, addOrRemoveFromPokedex,
+                setPokedex, addOrRemoveFromPokedex,
                 nextPage, previousPage}
     
     return(

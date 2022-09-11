@@ -27,7 +27,6 @@ export const PokemonDetails=()=>{
         setOnPokedex( pokedex.find( pokemon => pokemon.name === param.name) )
     }
 
-
     function requisicaoDetalhes(){
         const UrlPokemon= `https://pokeapi.co/api/v2/pokemon/${param.name}`
 
